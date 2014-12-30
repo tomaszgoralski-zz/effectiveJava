@@ -18,7 +18,5 @@ public class Main {
         System.out.println(white.getColor());
         System.out.println(black.getColor());
         System.out.println("cached: "+cached.getColor());
-
-        System.out.println("dupa");
     }
 }
