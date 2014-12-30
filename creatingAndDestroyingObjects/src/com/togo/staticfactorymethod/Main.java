@@ -1,38 +1,20 @@
 package com.togo.staticfactorymethod;
 
-
-import java.awt.*;
-
-class Furniture {
-
-    public Furniture(Color color) {
-        this.color = color;
-    }
-
-    private Color color;
-
-
-    /**
-     * always use static factory method for creating objects
-     * no name conflicts from constructor when you want to create different objects
-     */
-    public static Furniture getWhiteFurniture() {
-        return new Furniture(Color.WHITE);
-    }
-
-    public static Furniture getBlackFurniture() {
-        return new Furniture(Color.BLACK);
-    }
-
-}
-
 public class Main {
 
     public static void main(String[] args) {
 
+
+        // cant instantiate
+//        Furnitures f = new Furnitures();
+
         // get instance of white furniture
-        Furniture.getWhiteFurniture();
+        Furniture white = Furnitures.whiteFurniture();
         //get instance of black furniture
-        Furniture.getBlackFurniture();
+        Furniture black = Furnitures.blackFurniture();
+
+
+        System.out.println(white.getColor());
+        System.out.println(black.getColor());
     }
 }
