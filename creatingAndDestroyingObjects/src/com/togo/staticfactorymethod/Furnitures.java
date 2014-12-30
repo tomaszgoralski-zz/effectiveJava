@@ -8,14 +8,36 @@ import java.awt.*;
  */
 public class Furnitures {
 
+    static{
+        init();
+    }
+
+    /**
+     * static facotry method for obtain cached objects
+     *
+     * @return Furniture
+     */
+    public static Furniture getCachedFurniture(){
+        return cachedFurniture;
+    };
+
+    private static Furniture cachedFurniture;
+
+    /**
+     *  set-up default cached furniture
+     */
+    private static void init() {
+        cachedFurniture = new BlackFurniture();
+    }
+
     private Furnitures() {
     }
 
-    public static Furniture whiteFurniture() {
+    public static Furniture newWhiteFurniture() {
         return new WhiteFurniture();
     }
 
-    public static Furniture blackFurniture() {
+    public static Furniture newBlackFurniture() {
         return new BlackFurniture();
     }
 }
